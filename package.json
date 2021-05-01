@@ -1,0 +1,51 @@
+{
+  "name": "restaurante-api",
+  "version": "0.0.1",
+  "description": "API de um restaurante com Node.js e MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
+    "build": "babel src -s -D -d dist --presets es2015,stage-0",
+    "start": "NODE_ENV=production pm2 start dist",
+    "prestart": "npm run -s build",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "parseOptions": {
+      "ecmaversion": 7,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-console": 0,
+      "no-unused-vars": 1
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreysena/api-restful.git"
+  },
+  "author": "Andrey Sena",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreysena/api-restful/issues"
+  },
+  "homepage": "https://github.com/andreysena/api-restful#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.23.0",
+    "nodemon": "^2.0.7"
+  }
+}
